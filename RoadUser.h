@@ -9,10 +9,10 @@ public:
     RoadUser();
     RoadUser(Junction, Road);
     char direction[4] = {'N', 'S', 'W', 'E'};
-    void moveNorth();
-    void moveSouth();
-    void moveEast();
-    void moveWest();
+    void moveNorth(char);
+    void moveSouth(char);
+    void moveEast(char);
+    void moveWest(char);
     void stop();
     void start();
     bool passJunction;
@@ -26,6 +26,8 @@ public:
     void setCurrentDirection(char currentDirection);
     char getNextDirection() const;
     void setNextDirection(char nextDirection);
+    int getVelocity() const;
+    void setVelocity(int velocity);
 //    if(road->trafficLight = ???)
 //        then stop()
 //    else
@@ -37,10 +39,6 @@ private:
     char nextDirection; // will come to another road
     const int speed = 5;
     int velocity;
-
-public:
-    int getVelocity() const;
-    void setVelocity(int velocity);
 };
 //        |N              |N
 //        +               |
